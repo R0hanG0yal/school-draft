@@ -986,8 +986,8 @@ body {
   height: 100%;
   aspect-ratio: 16 / 7;
   object-fit: cover;
-  pointer-events: none;
   -webkit-user-drag: none;
+  user-drag: none;
   user-select: none;
   -webkit-user-select: none;
 }

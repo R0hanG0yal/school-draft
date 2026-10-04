@@ -4,6 +4,12 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  if (!window.location.hash) {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  }
   initSiteLoader();
   initHeroSlider();
   initStickyHeader();
@@ -463,8 +469,10 @@ function initDynamicGallery() {
       const isMatch = btn.getAttribute('data-cat-id') === String(target.id);
       btn.classList.toggle('is-active', isMatch);
       btn.setAttribute('aria-selected', isMatch ? 'true' : 'false');
-      if (isMatch) {
-        btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      if (isMatch && tabsContainer) {
+        // Only scroll the horizontal tabs container itself, NEVER scroll the browser window
+        const targetScroll = btn.offsetLeft - (tabsContainer.clientWidth / 2) + (btn.clientWidth / 2);
+        tabsContainer.scrollTo({ left: Math.max(0, targetScroll), behavior: 'smooth' });
       }
     });
 
@@ -719,23 +727,29 @@ function initHeroSlider() {
   const nextBtn = slider.querySelector('.slider-arrow.next');
   const dotsWrap = document.getElementById('heroDots');
   const caption = document.getElementById('heroCaption');
-  const AUTOPLAY_MS = 4000;
-  const SWIPE_THRESHOLD = 40;
+  const AUTOPLAY_MS = 3800;
+  const SWIPE_THRESHOLD = 35;
 
   if (!track || slides.length === 0) return;
+
+  // Prevent browser native image ghost dragging
+  slider.addEventListener('dragstart', (e) => e.preventDefault());
+  slider.querySelectorAll('img').forEach((img) => {
+    img.setAttribute('draggable', 'false');
+  });
 
   let index = 0;
   let timer = null;
 
-  // --- Drag/swipe state ---
+  let isPointerDown = false;
   let isDragging = false;
-  let dragStartX = 0;
-  let dragCurrentX = 0;
+  let startX = 0;
+  let startY = 0;
+  let currentX = 0;
   let sliderWidth = 0;
-  let touchStartX = 0;
-  let touchStartY = 0;
-  let isTouchHorizontal = null;
-  let hoverResumeTimer = null;
+  let direction = null; // 'horizontal' | 'vertical' | null
+  let activePointerId = null;
+  let hoverTimer = null;
 
   if (dotsWrap) {
     dotsWrap.innerHTML = '';
@@ -757,8 +771,8 @@ function initHeroSlider() {
 
   function goTo(i) {
     index = (i + slides.length) % slides.length;
-    track.style.transition = 'transform 0.55s cubic-bezier(0.16, 1, 0.3, 1)';
-    track.style.transform = 'translateX(' + (index * -100) + '%)';
+    track.style.transition = 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
+    track.style.transform = `translateX(${index * -100}%)`;
     slides.forEach((slide, n) => slide.classList.toggle('is-active', n === index));
     dots.forEach((dot, n) => dot.classList.toggle('is-active', n === index));
     if (caption) caption.textContent = slides[index].dataset.caption || '';
@@ -776,7 +790,6 @@ function initHeroSlider() {
     }
   }
 
-  // --- Arrow buttons ---
   if (prevBtn) {
     prevBtn.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -784,6 +797,7 @@ function initHeroSlider() {
       restartAutoplay();
     });
   }
+
   if (nextBtn) {
     nextBtn.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -792,125 +806,105 @@ function initHeroSlider() {
     });
   }
 
-  // --- Keyboard navigation ---
   document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowLeft') { goTo(index - 1); restartAutoplay(); }
     if (e.key === 'ArrowRight') { goTo(index + 1); restartAutoplay(); }
   });
 
-  // --- Touch events (mobile swiping with direction lock) ---
-  slider.addEventListener('touchstart', (e) => {
-    if (e.touches.length !== 1) return;
-    touchStartX = e.touches[0].clientX;
-    touchStartY = e.touches[0].clientY;
-    isTouchHorizontal = null;
+  // --- Unified Pointer Events for Touch + Mouse ---
+  slider.addEventListener('pointerdown', (e) => {
+    if (e.target.closest('.slider-arrow') || e.target.closest('.dot') || e.target.closest('a')) return;
+    if (e.isPrimary === false) return;
+    if (e.pointerType === 'mouse' && e.button !== 0) return;
+
+    isPointerDown = true;
+    isDragging = false;
+    direction = null;
+    startX = e.clientX;
+    startY = e.clientY;
+    currentX = e.clientX;
     sliderWidth = slider.offsetWidth || 1;
+    activePointerId = e.pointerId;
     stopAutoplay();
-  }, { passive: true });
+  });
 
-  slider.addEventListener('touchmove', (e) => {
-    if (e.touches.length !== 1) return;
-    const currentX = e.touches[0].clientX;
-    const currentY = e.touches[0].clientY;
-    const diffX = currentX - touchStartX;
-    const diffY = currentY - touchStartY;
+  slider.addEventListener('pointermove', (e) => {
+    if (!isPointerDown || e.pointerId !== activePointerId) return;
 
-    if (isTouchHorizontal === null) {
-      if (Math.abs(diffX) > 7 || Math.abs(diffY) > 7) {
-        isTouchHorizontal = Math.abs(diffX) >= Math.abs(diffY);
-        if (isTouchHorizontal) {
+    const diffX = e.clientX - startX;
+    const diffY = e.clientY - startY;
+
+    if (direction === null) {
+      if (Math.abs(diffX) > 6 || Math.abs(diffY) > 6) {
+        if (Math.abs(diffX) >= Math.abs(diffY)) {
+          direction = 'horizontal';
           isDragging = true;
-          dragStartX = touchStartX;
-          dragCurrentX = currentX;
-          track.style.transition = 'none';
           slider.classList.add('is-dragging');
+          track.style.transition = 'none';
+          try {
+            slider.setPointerCapture(e.pointerId);
+          } catch (err) {}
+        } else {
+          direction = 'vertical';
+          isPointerDown = false;
+          isDragging = false;
+          restartAutoplay();
+          return;
         }
       }
     }
 
-    if (isTouchHorizontal && isDragging) {
-      if (e.cancelable) e.preventDefault();
-      dragCurrentX = currentX;
-      const dx = dragCurrentX - dragStartX;
+    if (direction === 'horizontal' && isDragging) {
+      currentX = e.clientX;
+      const dx = currentX - startX;
       const baseOffset = index * -100;
       const dragPercent = (dx / sliderWidth) * 100;
-      track.style.transform = 'translateX(' + (baseOffset + dragPercent) + '%)';
+      track.style.transform = `translateX(${baseOffset + dragPercent}%)`;
     }
-  }, { passive: false });
+  });
 
-  slider.addEventListener('touchend', (e) => {
-    if (isTouchHorizontal && isDragging) {
-      isDragging = false;
-      slider.classList.remove('is-dragging');
-      const endX = (e.changedTouches && e.changedTouches[0]) ? e.changedTouches[0].clientX : dragCurrentX;
-      const dx = endX - dragStartX;
+  const endDrag = (e) => {
+    if (!isPointerDown && !isDragging) return;
+    const wasDragging = isDragging && direction === 'horizontal';
+
+    isPointerDown = false;
+    isDragging = false;
+    slider.classList.remove('is-dragging');
+
+    if (activePointerId !== null) {
+      try {
+        slider.releasePointerCapture(activePointerId);
+      } catch (err) {}
+      activePointerId = null;
+    }
+
+    if (wasDragging) {
+      const dx = currentX - startX;
       if (Math.abs(dx) > SWIPE_THRESHOLD) {
         goTo(dx < 0 ? index + 1 : index - 1);
       } else {
         goTo(index);
       }
     }
-    isTouchHorizontal = null;
+
+    direction = null;
     restartAutoplay();
-  }, { passive: true });
+  };
 
-  slider.addEventListener('touchcancel', () => {
-    if (isDragging) {
-      isDragging = false;
-      slider.classList.remove('is-dragging');
-      goTo(index);
-    }
-    isTouchHorizontal = null;
-    restartAutoplay();
-  }, { passive: true });
+  slider.addEventListener('pointerup', endDrag);
+  slider.addEventListener('pointercancel', endDrag);
 
-  // --- Mouse drag events (desktop sliding) ---
-  slider.addEventListener('mousedown', (e) => {
-    if (e.target.closest('.slider-arrow') || e.target.closest('.dot') || e.target.closest('a')) return;
-    e.preventDefault();
-    isDragging = true;
-    dragStartX = e.clientX;
-    dragCurrentX = e.clientX;
-    sliderWidth = slider.offsetWidth || 1;
-    track.style.transition = 'none';
-    stopAutoplay();
-    slider.classList.add('is-dragging');
-  });
-
-  document.addEventListener('mousemove', (e) => {
-    if (!isDragging) return;
-    e.preventDefault();
-    dragCurrentX = e.clientX;
-    const dx = dragCurrentX - dragStartX;
-    const baseOffset = index * -100;
-    const dragPercent = (dx / sliderWidth) * 100;
-    track.style.transform = 'translateX(' + (baseOffset + dragPercent) + '%)';
-  });
-
-  document.addEventListener('mouseup', () => {
-    if (!isDragging) return;
-    isDragging = false;
-    slider.classList.remove('is-dragging');
-    const dx = dragCurrentX - dragStartX;
-    if (Math.abs(dx) > SWIPE_THRESHOLD) {
-      goTo(dx < 0 ? index + 1 : index - 1);
-    } else {
-      goTo(index);
-    }
-    restartAutoplay();
-  });
-
-  // --- Smart hover autoplay: pause briefly, then auto-resume after 2.5s ---
+  // Resume autoplay on hover leave or after 2.5s idle
   slider.addEventListener('mouseenter', () => {
     if (!isDragging) {
       stopAutoplay();
-      clearTimeout(hoverResumeTimer);
-      hoverResumeTimer = setTimeout(restartAutoplay, 2500);
+      clearTimeout(hoverTimer);
+      hoverTimer = setTimeout(restartAutoplay, 2500);
     }
   });
 
   slider.addEventListener('mouseleave', () => {
-    clearTimeout(hoverResumeTimer);
+    clearTimeout(hoverTimer);
     if (!isDragging) restartAutoplay();
   });
 
@@ -1065,37 +1059,14 @@ function initScrollAnimations() {
    Smooth Preloader Screen
    -------------------------------------------------------------------------- */
 
-function autoScrollToHeroSection() {
-  if (window.location.hash) return;
-  if (window.scrollY > 200) return;
-
-  const ctaRow = document.querySelector('.hero .cta-row');
-  const heroSlider = document.getElementById('heroSlider');
-  const target = ctaRow || heroSlider;
-  if (!target) return;
-
-  const header = document.querySelector('.site-header');
-  const headerOffset = header ? header.offsetHeight + 24 : 96;
-  const targetTop = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
-
-  window.scrollTo({
-    top: Math.max(0, targetTop),
-    behavior: 'smooth'
-  });
-}
-
 function initSiteLoader() {
   const loader = document.getElementById('siteLoader');
-  if (!loader) {
-    setTimeout(autoScrollToHeroSection, 150);
-    return;
-  }
+  if (!loader) return;
 
   const hideLoader = () => {
     loader.classList.add('is-loaded');
     setTimeout(() => {
       if (loader.parentNode) loader.parentNode.removeChild(loader);
-      autoScrollToHeroSection();
     }, 450);
   };
 
