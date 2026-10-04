@@ -577,6 +577,12 @@ body {
 /* ==========================================================================
    Exploded Menu - White Shade Liquid Glass & Physics Explosion
    ========================================================================== */
+/* Locked document scroll when modal is active (prevents reflow jank) */
+html.menu-locked,
+html.menu-locked body {
+  overflow: hidden !important;
+  touch-action: none;
+}
 
 .exploded-menu-backdrop {
   position: fixed;
@@ -586,12 +592,14 @@ body {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.22s ease;
+  transition: opacity 0.18s ease-out, visibility 0.18s ease;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   padding: 1.5rem;
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  contain: paint;
 }
 
 .exploded-menu-backdrop.is-open {
@@ -604,7 +612,7 @@ body {
   display: none !important;
 }
 
-/* The Exploded Menu Container: Ultra-clean White Editorial Panel */
+/* The Exploded Menu Container: Ultra-clean White Editorial Panel (Unboxed) */
 .exploded-menu-container {
   position: relative;
   width: 100%;
@@ -612,77 +620,55 @@ body {
   margin: 1.25rem auto 3rem;
   background: #FFFFFF;
   border: 1px solid rgba(14, 29, 49, 0.08);
-  border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(14, 29, 49, 0.12);
+  border-radius: 18px;
+  box-shadow: 0 16px 48px rgba(14, 29, 49, 0.1);
   padding: 2.25rem 2.5rem;
   z-index: 152;
-  transform: translateY(-10px);
+  transform: translate3d(0, -6px, 0);
   opacity: 0;
   transition: 
-    transform 0.24s cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 0.22s ease;
+    transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.18s ease-out;
   will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .exploded-menu-backdrop.is-open .exploded-menu-container {
-  transform: translateY(0);
+  transform: translate3d(0, 0, 0);
   opacity: 1;
 }
 
-/* Header inside exploded menu */
+/* Minimalist Header: No logo, No school name clutter */
 .exploded-menu-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid rgba(14, 29, 49, 0.08);
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(14, 29, 49, 0.06);
   margin-bottom: 1.75rem;
 }
 
-.exploded-brand {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-}
-
-.exploded-brand-logo {
-  height: 48px;
-  width: auto;
-  object-fit: contain;
-}
-
-.exploded-brand-title {
-  display: block;
+.exploded-menu-title {
   font-family: var(--serif);
-  font-size: 1.45rem;
-  font-weight: 700;
-  color: var(--navy);
-  letter-spacing: -0.01em;
-  line-height: 1.2;
-}
-
-.exploded-brand-subtitle {
-  display: block;
-  font-size: 0.78rem;
+  font-size: 1.25rem;
   font-weight: 600;
-  color: var(--saffron);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-top: 0.15rem;
+  color: var(--navy);
+  letter-spacing: 0.01em;
 }
 
 .exploded-menu-close {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
-  padding: 0.55rem 1.2rem;
-  background: rgba(14, 29, 49, 0.04);
-  border: 1px solid rgba(14, 29, 49, 0.1);
+  gap: 0.5rem;
+  padding: 0.45rem 1.1rem;
+  background: transparent;
+  border: 1px solid rgba(14, 29, 49, 0.12);
   border-radius: 999px;
   color: var(--navy);
   font-family: var(--sans);
-  font-size: 0.82rem;
-  font-weight: 600;
+  font-size: 0.8rem;
+  font-weight: 500;
   cursor: pointer;
   box-shadow: none;
   transition: all 0.2s ease;
@@ -693,6 +679,7 @@ body {
   border-color: var(--navy);
   color: #FFFFFF;
 }
+
 
 /* 4-Column Exploded Grid */
 .exploded-grid {
@@ -2931,49 +2918,28 @@ body {
   }
 
   .exploded-menu-header {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.65rem;
-    margin-bottom: 1.25rem;
-    padding-bottom: 1rem;
-    padding-top: 2.25rem;
-    position: relative;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    margin-bottom: 1.15rem !important;
+    padding-bottom: 0.85rem !important;
+    padding-top: 0 !important;
+    border-bottom: 1px solid rgba(14, 29, 49, 0.06) !important;
+  }
+
+  .exploded-menu-title {
+    font-size: 1.15rem !important;
   }
 
   .exploded-menu-close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 0.45rem 0.95rem;
-    font-size: 0.78rem;
-    z-index: 10;
-  }
-
-  .exploded-brand {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    width: 100%;
-  }
-
-  .exploded-brand-logo {
-    height: 36px;
-    max-width: 150px;
-    object-fit: contain;
-    flex-shrink: 0;
-  }
-
-  .exploded-brand-title {
-    font-size: 1.05rem;
-    line-height: 1.2;
-  }
-
-  .exploded-brand-subtitle {
-    font-size: 0.68rem;
-    white-space: normal;
-    letter-spacing: 0.04em;
-    line-height: 1.3;
+    position: static !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.4rem !important;
+    padding: 0.35rem 0.9rem !important;
+    font-size: 0.76rem !important;
+    border-radius: 999px !important;
   }
 
   .gallery-grid {
@@ -3467,22 +3433,22 @@ body {
 .exploded-quicklinks-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1rem 1.75rem;
+  gap: 0.85rem 1.75rem;
 }
 
 .exploded-ql-item {
   display: flex;
   align-items: center;
   gap: 0.65rem;
-  padding: 0.5rem 0;
+  padding: 0.45rem 0;
   background: transparent;
   border: none;
   border-bottom: 1px solid rgba(14, 29, 49, 0.06);
   border-radius: 0;
   box-shadow: none;
   text-decoration: none;
-  color: var(--ink);
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  color: var(--navy);
+  transition: border-color 0.2s ease, transform 0.2s ease, color 0.2s ease;
 }
 
 .exploded-ql-item:hover {
@@ -3490,70 +3456,30 @@ body {
   border-bottom-color: var(--saffron);
   transform: translateX(3px);
   box-shadow: none;
-}
-
-.exploded-ql-item.highlight-saffron,
-.exploded-ql-item.highlight-green {
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid rgba(14, 29, 49, 0.06);
-  box-shadow: none;
-}
-
-.exploded-ql-item.highlight-saffron:hover,
-.exploded-ql-item.highlight-green:hover {
-  background: transparent;
-  border-bottom-color: var(--saffron);
-  box-shadow: none;
+  color: var(--saffron);
 }
 
 .ql-icon {
-  width: auto;
-  height: auto;
-  background: transparent;
+  width: 18px;
+  text-align: center;
   color: var(--saffron);
   font-size: 0.85rem;
   flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.exploded-ql-item.highlight-saffron .ql-icon {
-  background: transparent;
-  color: var(--saffron);
-}
-
-.exploded-ql-item.highlight-green .ql-icon {
-  background: transparent;
-  color: var(--green);
-}
-
-.ql-details {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 0.08rem;
-  min-width: 0;
 }
 
 .ql-name {
   font-family: var(--sans);
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--navy);
-  line-height: 1.25;
+  flex-grow: 1;
+  white-space: nowrap;
+  letter-spacing: -0.005em;
   transition: color 0.2s ease;
 }
 
 .exploded-ql-item:hover .ql-name {
   color: var(--saffron);
-}
-
-.ql-sub {
-  font-size: 0.68rem;
-  color: var(--muted);
-  line-height: 1.2;
 }
 
 .ql-arrow {
@@ -3565,7 +3491,7 @@ body {
 
 .exploded-ql-item:hover .ql-arrow {
   color: var(--saffron);
-  transform: translateX(3px);
+  transform: translateX(2px);
 }
 
 /* Fallback hiding of any lingering dock elements */
@@ -3578,14 +3504,14 @@ body {
 @media (max-width: 1080px) {
   .exploded-quicklinks-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.85rem 1.5rem;
+    gap: 0.75rem 1.5rem;
   }
 }
 
 @media (max-width: 640px) {
   .exploded-quicklinks-bar {
-    margin-bottom: 1.5rem !important;
-    padding-bottom: 1rem !important;
+    margin-bottom: 1.25rem !important;
+    padding-bottom: 0.85rem !important;
   }
 
   .exploded-section-title {
@@ -3594,31 +3520,29 @@ body {
 
   .exploded-quicklinks-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 0.55rem 0.85rem !important;
+    gap: 0.55rem 0.75rem !important;
   }
 
   .exploded-ql-item {
-    padding: 0.35rem 0 !important;
+    padding: 0.38rem 0 !important;
     gap: 0.45rem !important;
     background: transparent !important;
     border: none !important;
-    border-bottom: 1px solid rgba(14, 29, 49, 0.08) !important;
+    border-bottom: 1px solid rgba(14, 29, 49, 0.06) !important;
     box-shadow: none !important;
   }
 
   .ql-icon {
-    font-size: 0.78rem !important;
+    font-size: 0.76rem !important;
+    width: 14px !important;
   }
 
   .ql-name {
-    font-size: 0.78rem !important;
-    line-height: 1.2 !important;
-    white-space: normal !important;
-  }
-
-  .ql-sub {
-    font-size: 0.65rem !important;
-    line-height: 1.15 !important;
+    font-size: 0.76rem !important;
+    line-height: 1.25 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
   }
 
   .ql-arrow {
