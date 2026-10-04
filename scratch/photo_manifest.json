@@ -1,0 +1,1083 @@
+{
+  "stats": {
+    "pages": 21,
+    "found": 832,
+    "downloaded": 134,
+    "failed": 82,
+    "skipped": 4
+  },
+  "manifest": [
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/js/vendor/jquery.min.js",
+      "local": "public/photos/campus/jquery.min.js",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 87532
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/front/js/script.js",
+      "local": "public/photos/campus/script.js",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 26739
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/Schoolnamelogoweb.png",
+      "local": "public/photos/brand/Schoolnamelogoweb.png",
+      "category": "brand",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "logo",
+      "bytes": 165640
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/179066173311.png",
+      "local": "public/photos/campus/179066173311.png",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 304607
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/178979072517.png",
+      "local": "public/photos/campus/178979072517.png",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 341388
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/EducationTodayWeb.jpeg",
+      "local": "public/photos/campus/EducationTodayWeb.jpeg",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 163956
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/176067218465.jpg",
+      "local": "public/photos/campus/176067218465.jpg",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 615901
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/172672876387.jpg",
+      "local": "public/photos/campus/172672876387.jpg",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 721379
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/176067280221.jpg",
+      "local": "public/photos/campus/176067280221.jpg",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 368455
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/banner13.png",
+      "local": "public/photos/events/banner13.png",
+      "category": "events",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 1556864
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/172672868449.jpg",
+      "local": "public/photos/sports/172672868449.jpg",
+      "category": "sports",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 923659
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/banner14.png",
+      "local": "public/photos/campus/banner14.png",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 1866797
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/172974251920.png",
+      "local": "public/photos/campus/172974251920.png",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 373074
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/Ac.jpg",
+      "local": "public/photos/campus/Ac.jpg",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 494730
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/177824136418.png",
+      "local": "public/photos/sports/177824136418.png",
+      "category": "sports",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 419792
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/banner9.png",
+      "local": "public/photos/campus/banner9.png",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 466713
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/Admtestp2bsp.jpeg",
+      "local": "public/photos/campus/Admtestp2bsp.jpeg",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 378787
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/2.png",
+      "local": "public/photos/campus/2.png",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 138139
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/172603136118.png",
+      "local": "public/photos/campus/172603136118.png",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "img",
+      "bytes": 489352
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/17260326873.jpg",
+      "local": "public/photos/campus/17260326873.jpg",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "img",
+      "bytes": 73260
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/FPPNW.jpg",
+      "local": "public/photos/campus/FPPNW.jpg",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "img",
+      "bytes": 306990
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/172603662317.png",
+      "local": "public/photos/campus/172603662317.png",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 14568
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/172603660358.webp",
+      "local": "public/photos/campus/172603660358.webp",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 32250
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/172603659629.webp",
+      "local": "public/photos/campus/172603659629.webp",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 61346
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/172603658264.webp",
+      "local": "public/photos/campus/172603658264.webp",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 10554
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/172672984328.png",
+      "local": "public/photos/campus/172672984328.png",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 6412
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/sic.jpg",
+      "local": "public/photos/affiliations/sic.jpg",
+      "category": "affiliations",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 14842
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/172723703036.bmp",
+      "local": "public/photos/campus/172723703036.bmp",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "img",
+      "bytes": 165870
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/172674389210.jpg",
+      "local": "public/photos/campus/172674389210.jpg",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "img",
+      "bytes": 5722
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/172922832019.png",
+      "local": "public/photos/campus/172922832019.png",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "img",
+      "bytes": 148426
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/175810953765.png",
+      "local": "public/photos/campus/175810953765.png",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "img",
+      "bytes": 450125
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/web2027-28.png",
+      "local": "public/photos/campus/web2027-28.png",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 1727988
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js",
+      "local": "public/photos/campus/rocket-loader.min.js",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 12332
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/admin_assets/plugins/sweetalert2/sweetalert2.min.js",
+      "local": "public/photos/campus/sweetalert2.min.js",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 44930
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/js/vendor/modernizr-3.5.0.min.js",
+      "local": "public/photos/campus/modernizr-3.5.0.min.js",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 8636
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/js/popper.min.js",
+      "local": "public/photos/campus/popper.min.js",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 19188
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/js/bootstrap.min.js",
+      "local": "public/photos/campus/bootstrap.min.js",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 60089
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/js/slick.min.js",
+      "local": "public/photos/campus/slick.min.js",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 42863
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/js/ajax-form.js",
+      "local": "public/photos/campus/ajax-form.js",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 1202
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/js/paroller.js",
+      "local": "public/photos/campus/paroller.js",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 8806
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/js/wow.min.js",
+      "local": "public/photos/campus/wow.min.js",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 8415
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/js/js_isotope.pkgd.min.js",
+      "local": "public/photos/campus/js_isotope.pkgd.min.js",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 35503
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/js/imagesloaded.min.js",
+      "local": "public/photos/campus/imagesloaded.min.js",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 8113
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/js/parallax.min.js",
+      "local": "public/photos/campus/parallax.min.js",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 12293
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/js/jquery.waypoints.min.js",
+      "local": "public/photos/campus/jquery.waypoints.min.js",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 8833
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/js/jquery.scrollUp.min.js",
+      "local": "public/photos/campus/jquery.scrollUp.min.js",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 2035
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/js/jquery.meanmenu.min.js",
+      "local": "public/photos/campus/jquery.meanmenu.min.js",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 4019
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/js/parallax-scroll.js",
+      "local": "public/photos/campus/parallax-scroll.js",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 9117
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/js/jquery.magnific-popup.min.js",
+      "local": "public/photos/campus/jquery.magnific-popup.min.js",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 20216
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/js/element-in-view.js",
+      "local": "public/photos/campus/element-in-view.js",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 1451
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/js/main.js",
+      "local": "public/photos/campus/main.js",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 13183
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/bg/services-bg.png",
+      "local": "public/photos/campus/services-bg.png",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/",
+      "alt": "",
+      "bytes": 1449883
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/172620595358.jpg",
+      "local": "public/photos/campus/172620595358.jpg",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/about-us",
+      "alt": "",
+      "bytes": 29577
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/172724460278.png",
+      "local": "public/photos/campus/172724460278.png",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/about-us",
+      "alt": "",
+      "bytes": 299314
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/Class12result2026.png",
+      "local": "public/photos/academics/Class12result2026.png",
+      "category": "academics",
+      "source": "https://www.birlaschoolpilani.edu.in/academics",
+      "alt": "",
+      "bytes": 1797094
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/Cls12Rslt26.png",
+      "local": "public/photos/academics/Cls12Rslt26.png",
+      "category": "academics",
+      "source": "https://www.birlaschoolpilani.edu.in/academics",
+      "alt": "",
+      "bytes": 1750166
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/classX2026.jpeg",
+      "local": "public/photos/academics/classX2026.jpeg",
+      "category": "academics",
+      "source": "https://www.birlaschoolpilani.edu.in/academics",
+      "alt": "",
+      "bytes": 378434
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/172750918113.jpg",
+      "local": "public/photos/academics/172750918113.jpg",
+      "category": "academics",
+      "source": "https://www.birlaschoolpilani.edu.in/academics",
+      "alt": "",
+      "bytes": 342416
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/17275091748.jpg",
+      "local": "public/photos/academics/17275091748.jpg",
+      "category": "academics",
+      "source": "https://www.birlaschoolpilani.edu.in/academics",
+      "alt": "",
+      "bytes": 352626
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/172750916870.jpg",
+      "local": "public/photos/academics/172750916870.jpg",
+      "category": "academics",
+      "source": "https://www.birlaschoolpilani.edu.in/academics",
+      "alt": "",
+      "bytes": 121190
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/172750916182.jpg",
+      "local": "public/photos/academics/172750916182.jpg",
+      "category": "academics",
+      "source": "https://www.birlaschoolpilani.edu.in/academics",
+      "alt": "",
+      "bytes": 123067
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/172750915468.jpg",
+      "local": "public/photos/academics/172750915468.jpg",
+      "category": "academics",
+      "source": "https://www.birlaschoolpilani.edu.in/academics",
+      "alt": "",
+      "bytes": 213466
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/172750914769.jpg",
+      "local": "public/photos/academics/172750914769.jpg",
+      "category": "academics",
+      "source": "https://www.birlaschoolpilani.edu.in/academics",
+      "alt": "",
+      "bytes": 601275
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/172750913628.jpg",
+      "local": "public/photos/academics/172750913628.jpg",
+      "category": "academics",
+      "source": "https://www.birlaschoolpilani.edu.in/academics",
+      "alt": "",
+      "bytes": 707810
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/172750912786.jpg",
+      "local": "public/photos/academics/172750912786.jpg",
+      "category": "academics",
+      "source": "https://www.birlaschoolpilani.edu.in/academics",
+      "alt": "",
+      "bytes": 1968111
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/1727509116100.jpg",
+      "local": "public/photos/academics/1727509116100.jpg",
+      "category": "academics",
+      "source": "https://www.birlaschoolpilani.edu.in/academics",
+      "alt": "",
+      "bytes": 252863
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/images/academics/the-indian-express-design_002.jpg",
+      "local": "public/photos/academics/the-indian-express-design_002.jpg",
+      "category": "academics",
+      "source": "https://www.birlaschoolpilani.edu.in/academics",
+      "alt": "",
+      "bytes": 1045681
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/images/academics/Result-12-2019-20-web.jpg",
+      "local": "public/photos/academics/Result-12-2019-20-web.jpg",
+      "category": "academics",
+      "source": "https://www.birlaschoolpilani.edu.in/academics",
+      "alt": "",
+      "bytes": 116577
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/images//academics/Result-10-2019-20-website_001-we.jpg",
+      "local": "public/photos/academics/Result-10-2019-20-website_001-we.jpg",
+      "category": "academics",
+      "source": "https://www.birlaschoolpilani.edu.in/academics",
+      "alt": "",
+      "bytes": 121711
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/images/academics/Academic-result-2018-1912-1.jpg",
+      "local": "public/photos/academics/Academic-result-2018-1912-1.jpg",
+      "category": "academics",
+      "source": "https://www.birlaschoolpilani.edu.in/academics",
+      "alt": "",
+      "bytes": 1274855
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/images/academics/Academic-result-2018-19-10-1.jpg",
+      "local": "public/photos/academics/Academic-result-2018-19-10-1.jpg",
+      "category": "academics",
+      "source": "https://www.birlaschoolpilani.edu.in/academics",
+      "alt": "",
+      "bytes": 181153
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/images/academics/FOR-fb-WEB-bsp-2018-19-advt-12-r.jpg",
+      "local": "public/photos/academics/FOR-fb-WEB-bsp-2018-19-advt-12-r.jpg",
+      "category": "academics",
+      "source": "https://www.birlaschoolpilani.edu.in/academics",
+      "alt": "",
+      "bytes": 295794
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/images/academics/bsp-2018-19-advt-after-10-result.jpg",
+      "local": "public/photos/academics/bsp-2018-19-advt-after-10-result.jpg",
+      "category": "academics",
+      "source": "https://www.birlaschoolpilani.edu.in/academics",
+      "alt": "",
+      "bytes": 180310
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/images/academics/pro1.jpg",
+      "local": "public/photos/academics/pro1.jpg",
+      "category": "academics",
+      "source": "https://www.birlaschoolpilani.edu.in/academics",
+      "alt": "",
+      "bytes": 293593
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/172974312661.jpg",
+      "local": "public/photos/academics/172974312661.jpg",
+      "category": "academics",
+      "source": "https://www.birlaschoolpilani.edu.in/academics",
+      "alt": "",
+      "bytes": 494730
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/ETISMA.jpg",
+      "local": "public/photos/events/ETISMA.jpg",
+      "category": "events",
+      "source": "https://www.birlaschoolpilani.edu.in/achievements",
+      "alt": "",
+      "bytes": 199370
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in//public/storage/media/EWR2024.jpg",
+      "local": "public/photos/events/EWR2024.jpg",
+      "category": "events",
+      "source": "https://www.birlaschoolpilani.edu.in/achievements",
+      "alt": "",
+      "bytes": 181482
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in//public/storage/media/epoty2024.jpg",
+      "local": "public/photos/events/epoty2024.jpg",
+      "category": "events",
+      "source": "https://www.birlaschoolpilani.edu.in/achievements",
+      "alt": "",
+      "bytes": 214914
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in//public/storage/media/BSAI.jpg",
+      "local": "public/photos/events/BSAI.jpg",
+      "category": "events",
+      "source": "https://www.birlaschoolpilani.edu.in/achievements",
+      "alt": "",
+      "bytes": 189054
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in//public/storage/media/IGA2024.jpg",
+      "local": "public/photos/events/IGA2024.jpg",
+      "category": "events",
+      "source": "https://www.birlaschoolpilani.edu.in/achievements",
+      "alt": "",
+      "bytes": 245222
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/172672876496.jpg",
+      "local": "public/photos/events/172672876496.jpg",
+      "category": "events",
+      "source": "https://www.birlaschoolpilani.edu.in/achievements",
+      "alt": "",
+      "bytes": 721379
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/17255319745.jpg",
+      "local": "public/photos/boarding/17255319745.jpg",
+      "category": "boarding",
+      "source": "https://www.birlaschoolpilani.edu.in/boarding",
+      "alt": "",
+      "bytes": 17091
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/172553199357.jpg",
+      "local": "public/photos/boarding/172553199357.jpg",
+      "category": "boarding",
+      "source": "https://www.birlaschoolpilani.edu.in/boarding",
+      "alt": "",
+      "bytes": 46193
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/17254343302.jpg",
+      "local": "public/photos/campus/17254343302.jpg",
+      "category": "campus",
+      "source": "https://www.birlaschoolpilani.edu.in/why-bsp",
+      "alt": "",
+      "bytes": 75391
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/172977083560.png",
+      "local": "public/photos/events/172977083560.png",
+      "category": "events",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/125th-annual-day-celebration-15th-oct-2025",
+      "alt": "",
+      "bytes": 299314
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/20240823_080149.jpg",
+      "local": "public/photos/sports/20240823_080149.jpg",
+      "category": "sports",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/bet-inter-school-boys-swimming-meet-2024",
+      "alt": "",
+      "bytes": 1100047
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/IMG_9210.JPG",
+      "local": "public/photos/sports/IMG_9210.JPG",
+      "category": "sports",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/bet-inter-school-boys-swimming-meet-2024",
+      "alt": "",
+      "bytes": 2173530
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/IMG_9306.JPG",
+      "local": "public/photos/sports/IMG_9306.JPG",
+      "category": "sports",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/bet-inter-school-boys-swimming-meet-2024",
+      "alt": "",
+      "bytes": 1644604
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/IMG_9334.JPG",
+      "local": "public/photos/sports/IMG_9334.JPG",
+      "category": "sports",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/bet-inter-school-boys-swimming-meet-2024",
+      "alt": "",
+      "bytes": 2099085
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/IMG_9349.JPG",
+      "local": "public/photos/sports/IMG_9349.JPG",
+      "category": "sports",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/bet-inter-school-boys-swimming-meet-2024",
+      "alt": "",
+      "bytes": 1671046
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/IMG_9206.JPG",
+      "local": "public/photos/sports/IMG_9206.JPG",
+      "category": "sports",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/bet-inter-school-boys-swimming-meet-2024",
+      "alt": "",
+      "bytes": 1544458
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/1790223527100.5263.png",
+      "local": "public/photos/sports/1790223527100.5263.png",
+      "category": "sports",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/70th-educational-district-level-football-tournament-under-19-birla-school-players-selected-for-state-level",
+      "alt": "...",
+      "bytes": 407524
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/IMG_0018.JPG",
+      "local": "public/photos/events/IMG_0018.JPG",
+      "category": "events",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/124th-annual-function-abhivyakti-2024",
+      "alt": "",
+      "bytes": 693658
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/IMG_0019.JPG",
+      "local": "public/photos/events/IMG_0019.JPG",
+      "category": "events",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/124th-annual-function-abhivyakti-2024",
+      "alt": "",
+      "bytes": 600996
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/IMG_0040.JPG",
+      "local": "public/photos/events/IMG_0040.JPG",
+      "category": "events",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/124th-annual-function-abhivyakti-2024",
+      "alt": "",
+      "bytes": 709294
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/IMG_0106.JPG",
+      "local": "public/photos/events/IMG_0106.JPG",
+      "category": "events",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/124th-annual-function-abhivyakti-2024",
+      "alt": "",
+      "bytes": 629746
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/IMG_0114.JPG",
+      "local": "public/photos/events/IMG_0114.JPG",
+      "category": "events",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/124th-annual-function-abhivyakti-2024",
+      "alt": "",
+      "bytes": 798620
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/IMG_0168.JPG",
+      "local": "public/photos/events/IMG_0168.JPG",
+      "category": "events",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/124th-annual-function-abhivyakti-2024",
+      "alt": "",
+      "bytes": 778134
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/174375235190.487496523_1094064696071557_4608012057219217164_n.jpg",
+      "local": "public/photos/events/174375235190.487496523_1094064696071557_4608012057219217164_n.jpg",
+      "category": "events",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/birla-school-pilani-welcomes-new-students",
+      "alt": "...",
+      "bytes": 611024
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/174375235155.487495963_1094064656071561_5194093615200907363_n.jpg",
+      "local": "public/photos/events/174375235155.487495963_1094064656071561_5194093615200907363_n.jpg",
+      "category": "events",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/birla-school-pilani-welcomes-new-students",
+      "alt": "...",
+      "bytes": 567070
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/174375235127.487832071_1094064692738224_624191224572370884_n.jpg",
+      "local": "public/photos/events/174375235127.487832071_1094064692738224_624191224572370884_n.jpg",
+      "category": "events",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/birla-school-pilani-welcomes-new-students",
+      "alt": "...",
+      "bytes": 696255
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/174375235162.489045336_1094064626071564_5932293877440714674_n.jpg",
+      "local": "public/photos/events/174375235162.489045336_1094064626071564_5932293877440714674_n.jpg",
+      "category": "events",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/birla-school-pilani-welcomes-new-students",
+      "alt": "...",
+      "bytes": 578357
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/174375235189.487954935_1094064579404902_4075929563863502557_n.jpg",
+      "local": "public/photos/events/174375235189.487954935_1094064579404902_4075929563863502557_n.jpg",
+      "category": "events",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/birla-school-pilani-welcomes-new-students",
+      "alt": "...",
+      "bytes": 286579
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/174375235185.487818453_1094064716071555_394503451012652227_n.jpg",
+      "local": "public/photos/events/174375235185.487818453_1094064716071555_394503451012652227_n.jpg",
+      "category": "events",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/birla-school-pilani-welcomes-new-students",
+      "alt": "...",
+      "bytes": 865040
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/174375235150.487876095_1094063089405051_6298102599592705184_n.jpg",
+      "local": "public/photos/events/174375235150.487876095_1094063089405051_6298102599592705184_n.jpg",
+      "category": "events",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/birla-school-pilani-welcomes-new-students",
+      "alt": "...",
+      "bytes": 647122
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/174375235154.487742359_1094063136071713_6421464439430828276_n.jpg",
+      "local": "public/photos/events/174375235154.487742359_1094063136071713_6421464439430828276_n.jpg",
+      "category": "events",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/birla-school-pilani-welcomes-new-students",
+      "alt": "...",
+      "bytes": 806524
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/174375235150.487785435_1094063096071717_3386569188819512372_n.jpg",
+      "local": "public/photos/events/174375235150.487785435_1094063096071717_3386569188819512372_n.jpg",
+      "category": "events",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/birla-school-pilani-welcomes-new-students",
+      "alt": "...",
+      "bytes": 477797
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/174375235186.488003510_1094063019405058_5502233326702471558_n.jpg",
+      "local": "public/photos/events/174375235186.488003510_1094063019405058_5502233326702471558_n.jpg",
+      "category": "events",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/birla-school-pilani-welcomes-new-students",
+      "alt": "...",
+      "bytes": 369496
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/174375235135.487878122_1094062666071760_8328439311841813971_n.jpg",
+      "local": "public/photos/events/174375235135.487878122_1094062666071760_8328439311841813971_n.jpg",
+      "category": "events",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/birla-school-pilani-welcomes-new-students",
+      "alt": "...",
+      "bytes": 274572
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/178748456722.IMG_0005.JPG",
+      "local": "public/photos/events/178748456722.IMG_0005.JPG",
+      "category": "events",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/bsv-mun-3-0-22-23-aug-2026",
+      "alt": "...",
+      "bytes": 916102
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/178748456748.IMG_0009.JPG",
+      "local": "public/photos/events/178748456748.IMG_0009.JPG",
+      "category": "events",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/bsv-mun-3-0-22-23-aug-2026",
+      "alt": "...",
+      "bytes": 790112
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/178748456768.IMG_0012.JPG",
+      "local": "public/photos/events/178748456768.IMG_0012.JPG",
+      "category": "events",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/bsv-mun-3-0-22-23-aug-2026",
+      "alt": "...",
+      "bytes": 608129
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/178748456750.IMG_0014.JPG",
+      "local": "public/photos/events/178748456750.IMG_0014.JPG",
+      "category": "events",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/bsv-mun-3-0-22-23-aug-2026",
+      "alt": "...",
+      "bytes": 574971
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/178748456723.IMG_0029.JPG",
+      "local": "public/photos/events/178748456723.IMG_0029.JPG",
+      "category": "events",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/bsv-mun-3-0-22-23-aug-2026",
+      "alt": "...",
+      "bytes": 422768
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/178748456743.IMG_0031.JPG",
+      "local": "public/photos/events/178748456743.IMG_0031.JPG",
+      "category": "events",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/bsv-mun-3-0-22-23-aug-2026",
+      "alt": "...",
+      "bytes": 394599
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/178748456712.IMG_0050.JPG",
+      "local": "public/photos/events/178748456712.IMG_0050.JPG",
+      "category": "events",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/bsv-mun-3-0-22-23-aug-2026",
+      "alt": "...",
+      "bytes": 608729
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/178748456785.IMG_0051.JPG",
+      "local": "public/photos/events/178748456785.IMG_0051.JPG",
+      "category": "events",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/bsv-mun-3-0-22-23-aug-2026",
+      "alt": "...",
+      "bytes": 840341
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/178748456773.IMG_0082.JPG",
+      "local": "public/photos/events/178748456773.IMG_0082.JPG",
+      "category": "events",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/bsv-mun-3-0-22-23-aug-2026",
+      "alt": "...",
+      "bytes": 921957
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/178748456767.IMG_0084.JPG",
+      "local": "public/photos/events/178748456767.IMG_0084.JPG",
+      "category": "events",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/bsv-mun-3-0-22-23-aug-2026",
+      "alt": "...",
+      "bytes": 867144
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/17874845676.IMG_0094.JPG",
+      "local": "public/photos/events/17874845676.IMG_0094.JPG",
+      "category": "events",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/bsv-mun-3-0-22-23-aug-2026",
+      "alt": "...",
+      "bytes": 872079
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/178748456718.IMG_0096.JPG",
+      "local": "public/photos/events/178748456718.IMG_0096.JPG",
+      "category": "events",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/bsv-mun-3-0-22-23-aug-2026",
+      "alt": "...",
+      "bytes": 746446
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/178748456787.IMG_0108.JPG",
+      "local": "public/photos/events/178748456787.IMG_0108.JPG",
+      "category": "events",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/bsv-mun-3-0-22-23-aug-2026",
+      "alt": "...",
+      "bytes": 942537
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/178748456734.IMG_0110.JPG",
+      "local": "public/photos/events/178748456734.IMG_0110.JPG",
+      "category": "events",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/bsv-mun-3-0-22-23-aug-2026",
+      "alt": "...",
+      "bytes": 1332362
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/178748456794.IMG_0131.JPG",
+      "local": "public/photos/events/178748456794.IMG_0131.JPG",
+      "category": "events",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/bsv-mun-3-0-22-23-aug-2026",
+      "alt": "...",
+      "bytes": 980280
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/178919323574.1000860561.jpg",
+      "local": "public/photos/sports/178919323574.1000860561.jpg",
+      "category": "sports",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/birla-school-pilani-clinches-the-inter-bet-volleyball-championship",
+      "alt": "...",
+      "bytes": 320377
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/178919323539.1000860159.jpg",
+      "local": "public/photos/sports/178919323539.1000860159.jpg",
+      "category": "sports",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/birla-school-pilani-clinches-the-inter-bet-volleyball-championship",
+      "alt": "...",
+      "bytes": 513456
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/178919323552.1000860149.jpg",
+      "local": "public/photos/sports/178919323552.1000860149.jpg",
+      "category": "sports",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/birla-school-pilani-clinches-the-inter-bet-volleyball-championship",
+      "alt": "...",
+      "bytes": 464859
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/178919323542.1000860156.jpg",
+      "local": "public/photos/sports/178919323542.1000860156.jpg",
+      "category": "sports",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/birla-school-pilani-clinches-the-inter-bet-volleyball-championship",
+      "alt": "...",
+      "bytes": 594500
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/1789193235100.1000860143.jpg",
+      "local": "public/photos/sports/1789193235100.1000860143.jpg",
+      "category": "sports",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/birla-school-pilani-clinches-the-inter-bet-volleyball-championship",
+      "alt": "...",
+      "bytes": 584870
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/178919323585.1000860154.jpg",
+      "local": "public/photos/sports/178919323585.1000860154.jpg",
+      "category": "sports",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/birla-school-pilani-clinches-the-inter-bet-volleyball-championship",
+      "alt": "...",
+      "bytes": 480882
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/178919323591.1000860163.jpg",
+      "local": "public/photos/sports/178919323591.1000860163.jpg",
+      "category": "sports",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/birla-school-pilani-clinches-the-inter-bet-volleyball-championship",
+      "alt": "...",
+      "bytes": 534542
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/178919323519.1000860161.jpg",
+      "local": "public/photos/sports/178919323519.1000860161.jpg",
+      "category": "sports",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/birla-school-pilani-clinches-the-inter-bet-volleyball-championship",
+      "alt": "...",
+      "bytes": 529878
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/178919323596.1000860164.jpg",
+      "local": "public/photos/sports/178919323596.1000860164.jpg",
+      "category": "sports",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/birla-school-pilani-clinches-the-inter-bet-volleyball-championship",
+      "alt": "...",
+      "bytes": 414756
+    },
+    {
+      "url": "https://www.birlaschoolpilani.edu.in/public/storage/media/178919323594.1000860152.jpg",
+      "local": "public/photos/sports/178919323594.1000860152.jpg",
+      "category": "sports",
+      "source": "https://www.birlaschoolpilani.edu.in/bsp/birla-school-pilani-clinches-the-inter-bet-volleyball-championship",
+      "alt": "...",
+      "bytes": 396735
+    }
+  ]
+}
