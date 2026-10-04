@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroSlider();
   initStickyHeader();
   initExplodedMenu();
+  initNavDropdowns();
   initDynamicGallery();
   initScrollSpy();
   initScrollProgress();
@@ -18,6 +19,43 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileExpanders();
   initFooterYear();
 });
+
+/* --------------------------------------------------------------------------
+   Nav Dropdowns — exclusive open, close on outside click
+   -------------------------------------------------------------------------- */
+
+function initNavDropdowns() {
+  const navItems = document.querySelectorAll('.nav-item');
+  if (!navItems.length) return;
+
+  let closeTimer = null;
+
+  navItems.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      clearTimeout(closeTimer);
+      // Close all other dropdowns first
+      navItems.forEach(other => {
+        if (other !== item) other.classList.remove('is-open');
+      });
+      item.classList.add('is-open');
+    });
+
+    item.addEventListener('mouseleave', () => {
+      // Small delay so the user can cross small gaps without losing the dropdown
+      closeTimer = setTimeout(() => {
+        item.classList.remove('is-open');
+      }, 120);
+    });
+  });
+
+  // Close all dropdowns when clicking outside the nav
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav-item')) {
+      navItems.forEach(item => item.classList.remove('is-open'));
+    }
+  });
+}
+
 
 /* --------------------------------------------------------------------------
    Mobile Progressive Disclosure ("Read More" / "Show Less")

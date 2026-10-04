@@ -394,12 +394,14 @@ body {
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease;
 }
 
-.nav-item:hover .nav-caret {
+.nav-item:hover .nav-caret,
+.nav-item.is-open .nav-caret {
   transform: rotate(180deg);
   color: var(--saffron);
 }
 
 .nav-item:hover .nav-link,
+.nav-item.is-open .nav-link,
 .nav-link.is-active,
 .nav a:hover,
 .nav a.is-active {
@@ -424,12 +426,24 @@ body {
   box-shadow: 0 16px 40px rgba(14, 29, 49, 0.12), 0 2px 6px rgba(14, 29, 49, 0.04), inset 0 1px 1px #FFFFFF;
   min-width: 260px;
   padding: 0.35rem 0;
-  margin-top: 0.35rem;
+  padding-top: 0.65rem;
+  margin-top: 0;
   z-index: 120;
   transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.25s ease;
 }
 
+/* Invisible bridge to prevent hover gap between nav-link and dropdown */
+.nav-dropdown::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 12px;
+}
+
 .nav-item:hover .nav-dropdown,
+.nav-item.is-open .nav-dropdown,
 .nav-item:focus-within .nav-dropdown {
   opacity: 1;
   visibility: visible;
