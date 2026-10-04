@@ -99,16 +99,27 @@ function initStickyHeader() {
   const header = document.querySelector('.site-header');
   if (!header) return;
 
+  let ticking = false;
+  let isScrolled = false;
+
+  const updateHeader = () => {
+    const shouldScroll = window.scrollY > 15;
+    if (shouldScroll !== isScrolled) {
+      isScrolled = shouldScroll;
+      header.classList.toggle('is-scrolled', isScrolled);
+    }
+    ticking = false;
+  };
+
   const onScroll = () => {
-    if (window.scrollY > 15) {
-      header.classList.add('is-scrolled');
-    } else {
-      header.classList.remove('is-scrolled');
+    if (!ticking) {
+      window.requestAnimationFrame(updateHeader);
+      ticking = true;
     }
   };
 
   window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+  updateHeader();
 }
 
 /* --------------------------------------------------------------------------
@@ -558,21 +569,8 @@ function initDynamicGallery() {
     }, 120);
   }
 
-  // Scrapbook view toggle controls
-  const viewScrapbookBtn = document.getElementById('viewScrapbook');
-  const viewGridBtn = document.getElementById('viewGrid');
-  if (viewScrapbookBtn && viewGridBtn) {
-    viewScrapbookBtn.addEventListener('click', () => {
-      gridContainer.classList.add('is-scrapbook-mode');
-      viewScrapbookBtn.classList.add('is-active');
-      viewGridBtn.classList.remove('is-active');
-    });
-    viewGridBtn.addEventListener('click', () => {
-      gridContainer.classList.remove('is-scrapbook-mode');
-      viewGridBtn.classList.add('is-active');
-      viewScrapbookBtn.classList.remove('is-active');
-    });
-  }
+  // Ensure scrapbook mode is always active
+  gridContainer.classList.add('is-scrapbook-mode');
 
   function updateActions(totalCount) {
     if (!loadMoreBtn) return;
@@ -956,19 +954,28 @@ function initScrollProgress() {
   const progressBar = document.getElementById('scrollProgress');
   if (!progressBar) return;
 
+  let ticking = false;
   const updateProgress = () => {
     const scrollPx = window.scrollY;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
     if (docHeight <= 0) {
       progressBar.style.width = '0%';
-      return;
+    } else {
+      const percent = Math.min(100, Math.max(0, (scrollPx / docHeight) * 100));
+      progressBar.style.width = `${percent}%`;
     }
-    const percent = Math.min(100, Math.max(0, (scrollPx / docHeight) * 100));
-    progressBar.style.width = `${percent}%`;
+    ticking = false;
   };
 
-  window.addEventListener('scroll', updateProgress, { passive: true });
-  window.addEventListener('resize', updateProgress, { passive: true });
+  const onScroll = () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateProgress);
+      ticking = true;
+    }
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
   updateProgress();
 }
 
@@ -980,12 +987,16 @@ function initBackToTop() {
   const btn = document.getElementById('backToTop');
   if (!btn) return;
 
-  const onScroll = () => {
-    if (window.scrollY > 350) {
-      btn.classList.add('is-visible');
-    } else {
-      btn.classList.remove('is-visible');
+  let ticking = false;
+  let isVisible = false;
+
+  const updateBackToTop = () => {
+    const shouldShow = window.scrollY > 350;
+    if (shouldShow !== isVisible) {
+      isVisible = shouldShow;
+      btn.classList.toggle('is-visible', isVisible);
     }
+    ticking = false;
   };
 
   btn.addEventListener('click', () => {
@@ -995,8 +1006,13 @@ function initBackToTop() {
     });
   });
 
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateBackToTop);
+      ticking = true;
+    }
+  }, { passive: true });
+  updateBackToTop();
 }
 
 /* --------------------------------------------------------------------------
@@ -1026,33 +1042,13 @@ function initScrollAnimations() {
     {
       root: null,
       threshold: 0.01,
-      rootMargin: '200px 0px 200px 0px'
+      rootMargin: '100px 0px 100px 0px'
     }
   );
 
-  const checkInView = () => {
-    const vh = window.innerHeight;
-    targets.forEach(target => {
-      if (!target.classList.contains('is-revealed')) {
-        const rect = target.getBoundingClientRect();
-        if (rect.top < vh + 150 && rect.bottom > -150) {
-          target.classList.add('is-revealed');
-          observer.unobserve(target);
-        }
-      }
-    });
-  };
-
   targets.forEach(target => {
-    const rect = target.getBoundingClientRect();
-    if (rect.top < window.innerHeight + 150 && rect.bottom > -150) {
-      target.classList.add('is-revealed');
-    } else {
-      observer.observe(target);
-    }
+    observer.observe(target);
   });
-
-  window.addEventListener('scroll', checkInView, { passive: true });
 }
 
 /* --------------------------------------------------------------------------
