@@ -719,12 +719,23 @@ function initHeroSlider() {
   const nextBtn = slider.querySelector('.slider-arrow.next');
   const dotsWrap = document.getElementById('heroDots');
   const caption = document.getElementById('heroCaption');
-  const AUTOPLAY_MS = 6500;
+  const AUTOPLAY_MS = 4000;
+  const SWIPE_THRESHOLD = 40;
 
   if (!track || slides.length === 0) return;
 
   let index = 0;
   let timer = null;
+
+  // --- Drag/swipe state ---
+  let isDragging = false;
+  let dragStartX = 0;
+  let dragCurrentX = 0;
+  let sliderWidth = 0;
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let isTouchHorizontal = null;
+  let hoverResumeTimer = null;
 
   if (dotsWrap) {
     dotsWrap.innerHTML = '';
@@ -735,7 +746,8 @@ function initHeroSlider() {
     dot.type = 'button';
     dot.className = 'dot' + (i === 0 ? ' is-active' : '');
     dot.setAttribute('aria-label', 'Show photo ' + (i + 1) + ' of ' + slides.length);
-    dot.addEventListener('click', () => {
+    dot.addEventListener('click', (e) => {
+      e.stopPropagation();
       goTo(i);
       restartAutoplay();
     });
@@ -745,6 +757,7 @@ function initHeroSlider() {
 
   function goTo(i) {
     index = (i + slides.length) % slides.length;
+    track.style.transition = 'transform 0.55s cubic-bezier(0.16, 1, 0.3, 1)';
     track.style.transform = 'translateX(' + (index * -100) + '%)';
     slides.forEach((slide, n) => slide.classList.toggle('is-active', n === index));
     dots.forEach((dot, n) => dot.classList.toggle('is-active', n === index));
@@ -752,39 +765,154 @@ function initHeroSlider() {
   }
 
   function restartAutoplay() {
-    if (timer) clearInterval(timer);
+    stopAutoplay();
     timer = setInterval(() => goTo(index + 1), AUTOPLAY_MS);
   }
 
   function stopAutoplay() {
-    if (timer) clearInterval(timer);
-    timer = null;
+    if (timer) {
+      clearInterval(timer);
+      timer = null;
+    }
   }
 
-  if (prevBtn) prevBtn.addEventListener('click', () => { goTo(index - 1); restartAutoplay(); });
-  if (nextBtn) nextBtn.addEventListener('click', () => { goTo(index + 1); restartAutoplay(); });
+  // --- Arrow buttons ---
+  if (prevBtn) {
+    prevBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      goTo(index - 1);
+      restartAutoplay();
+    });
+  }
+  if (nextBtn) {
+    nextBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      goTo(index + 1);
+      restartAutoplay();
+    });
+  }
 
+  // --- Keyboard navigation ---
   document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowLeft') { goTo(index - 1); restartAutoplay(); }
     if (e.key === 'ArrowRight') { goTo(index + 1); restartAutoplay(); }
   });
 
-  let startX = null;
+  // --- Touch events (mobile swiping with direction lock) ---
   slider.addEventListener('touchstart', (e) => {
-    startX = e.touches[0].clientX;
+    if (e.touches.length !== 1) return;
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+    isTouchHorizontal = null;
+    sliderWidth = slider.offsetWidth || 1;
     stopAutoplay();
   }, { passive: true });
 
+  slider.addEventListener('touchmove', (e) => {
+    if (e.touches.length !== 1) return;
+    const currentX = e.touches[0].clientX;
+    const currentY = e.touches[0].clientY;
+    const diffX = currentX - touchStartX;
+    const diffY = currentY - touchStartY;
+
+    if (isTouchHorizontal === null) {
+      if (Math.abs(diffX) > 7 || Math.abs(diffY) > 7) {
+        isTouchHorizontal = Math.abs(diffX) >= Math.abs(diffY);
+        if (isTouchHorizontal) {
+          isDragging = true;
+          dragStartX = touchStartX;
+          dragCurrentX = currentX;
+          track.style.transition = 'none';
+          slider.classList.add('is-dragging');
+        }
+      }
+    }
+
+    if (isTouchHorizontal && isDragging) {
+      if (e.cancelable) e.preventDefault();
+      dragCurrentX = currentX;
+      const dx = dragCurrentX - dragStartX;
+      const baseOffset = index * -100;
+      const dragPercent = (dx / sliderWidth) * 100;
+      track.style.transform = 'translateX(' + (baseOffset + dragPercent) + '%)';
+    }
+  }, { passive: false });
+
   slider.addEventListener('touchend', (e) => {
-    if (startX === null) return;
-    const dx = e.changedTouches[0].clientX - startX;
-    if (Math.abs(dx) > 40) goTo(dx < 0 ? index + 1 : index - 1);
-    startX = null;
+    if (isTouchHorizontal && isDragging) {
+      isDragging = false;
+      slider.classList.remove('is-dragging');
+      const endX = (e.changedTouches && e.changedTouches[0]) ? e.changedTouches[0].clientX : dragCurrentX;
+      const dx = endX - dragStartX;
+      if (Math.abs(dx) > SWIPE_THRESHOLD) {
+        goTo(dx < 0 ? index + 1 : index - 1);
+      } else {
+        goTo(index);
+      }
+    }
+    isTouchHorizontal = null;
     restartAutoplay();
   }, { passive: true });
 
-  slider.addEventListener('mouseenter', stopAutoplay);
-  slider.addEventListener('mouseleave', restartAutoplay);
+  slider.addEventListener('touchcancel', () => {
+    if (isDragging) {
+      isDragging = false;
+      slider.classList.remove('is-dragging');
+      goTo(index);
+    }
+    isTouchHorizontal = null;
+    restartAutoplay();
+  }, { passive: true });
+
+  // --- Mouse drag events (desktop sliding) ---
+  slider.addEventListener('mousedown', (e) => {
+    if (e.target.closest('.slider-arrow') || e.target.closest('.dot') || e.target.closest('a')) return;
+    e.preventDefault();
+    isDragging = true;
+    dragStartX = e.clientX;
+    dragCurrentX = e.clientX;
+    sliderWidth = slider.offsetWidth || 1;
+    track.style.transition = 'none';
+    stopAutoplay();
+    slider.classList.add('is-dragging');
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    dragCurrentX = e.clientX;
+    const dx = dragCurrentX - dragStartX;
+    const baseOffset = index * -100;
+    const dragPercent = (dx / sliderWidth) * 100;
+    track.style.transform = 'translateX(' + (baseOffset + dragPercent) + '%)';
+  });
+
+  document.addEventListener('mouseup', () => {
+    if (!isDragging) return;
+    isDragging = false;
+    slider.classList.remove('is-dragging');
+    const dx = dragCurrentX - dragStartX;
+    if (Math.abs(dx) > SWIPE_THRESHOLD) {
+      goTo(dx < 0 ? index + 1 : index - 1);
+    } else {
+      goTo(index);
+    }
+    restartAutoplay();
+  });
+
+  // --- Smart hover autoplay: pause briefly, then auto-resume after 2.5s ---
+  slider.addEventListener('mouseenter', () => {
+    if (!isDragging) {
+      stopAutoplay();
+      clearTimeout(hoverResumeTimer);
+      hoverResumeTimer = setTimeout(restartAutoplay, 2500);
+    }
+  });
+
+  slider.addEventListener('mouseleave', () => {
+    clearTimeout(hoverResumeTimer);
+    if (!isDragging) restartAutoplay();
+  });
 
   goTo(0);
   restartAutoplay();
@@ -937,23 +1065,46 @@ function initScrollAnimations() {
    Smooth Preloader Screen
    -------------------------------------------------------------------------- */
 
+function autoScrollToHeroSection() {
+  if (window.location.hash) return;
+  if (window.scrollY > 200) return;
+
+  const ctaRow = document.querySelector('.hero .cta-row');
+  const heroSlider = document.getElementById('heroSlider');
+  const target = ctaRow || heroSlider;
+  if (!target) return;
+
+  const header = document.querySelector('.site-header');
+  const headerOffset = header ? header.offsetHeight + 24 : 96;
+  const targetTop = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+
+  window.scrollTo({
+    top: Math.max(0, targetTop),
+    behavior: 'smooth'
+  });
+}
+
 function initSiteLoader() {
   const loader = document.getElementById('siteLoader');
-  if (!loader) return;
+  if (!loader) {
+    setTimeout(autoScrollToHeroSection, 150);
+    return;
+  }
 
   const hideLoader = () => {
     loader.classList.add('is-loaded');
     setTimeout(() => {
       if (loader.parentNode) loader.parentNode.removeChild(loader);
-    }, 600);
+      autoScrollToHeroSection();
+    }, 450);
   };
 
   if (document.readyState === 'complete') {
-    setTimeout(hideLoader, 300);
+    setTimeout(hideLoader, 200);
   } else {
-    window.addEventListener('load', () => setTimeout(hideLoader, 300));
+    window.addEventListener('load', () => setTimeout(hideLoader, 200));
     // Fallback maximum safety timeout
-    setTimeout(hideLoader, 1600);
+    setTimeout(hideLoader, 1400);
   }
 }
 

@@ -957,6 +957,18 @@ body {
   margin-top: 3rem;
   border: 1px solid var(--line);
   overflow: hidden;
+  cursor: grab;
+  touch-action: pan-y;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.hero-slider.is-dragging {
+  cursor: grabbing;
+}
+
+.hero-slider.is-dragging .hero-track {
+  transition: none;
 }
 
 .hero-track {
@@ -974,6 +986,10 @@ body {
   height: 100%;
   aspect-ratio: 16 / 7;
   object-fit: cover;
+  pointer-events: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .slider-arrow {
@@ -991,6 +1007,9 @@ body {
   align-items: center;
   justify-content: center;
   transition: background-color 0.2s ease, color 0.2s ease;
+  z-index: 10;
+  pointer-events: auto;
+  cursor: pointer;
 }
 
 .slider-arrow:hover {
