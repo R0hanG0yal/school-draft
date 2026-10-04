@@ -129,7 +129,6 @@ function initStickyHeader() {
 
 function getExplodedMenuTemplate() {
   return `
-    <div class="exploded-shockwave" id="menuShockwave"></div>
     <div class="exploded-menu-container" id="explodedMenu">
       <!-- Exploded Header -->
       <div class="exploded-menu-header">
@@ -146,14 +145,10 @@ function getExplodedMenuTemplate() {
         </button>
       </div>
 
-      <!-- Essential Quick Links & Portals (Inside Menu) -->
+      <!-- Quick Portals (Inside Menu) -->
       <div class="exploded-quicklinks-bar">
         <div class="exploded-quicklinks-header">
-          <div class="exploded-quicklinks-title">
-            <i class="fa-solid fa-bolt-lightning"></i>
-            <span>Essential Quick Links &amp; Portals</span>
-          </div>
-          <span class="exploded-quicklinks-badge">Instant 1-Click Access</span>
+          <span class="exploded-section-title">Quick Portals</span>
         </div>
         <div class="exploded-quicklinks-grid">
           <a href="https://www.betportal.org.in/BSP" target="_blank" rel="noopener" class="exploded-ql-item highlight-saffron">
@@ -333,33 +328,13 @@ function initExplodedMenu() {
 
   const container = document.getElementById('explodedMenu');
   const closeBtn = document.getElementById('explodedMenuClose');
-  const shockwave = document.getElementById('menuShockwave');
 
-  function updateOrigin(e) {
-    const rect = trigger.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-    const percentX = ((centerX / window.innerWidth) * 100).toFixed(1) + '%';
-    const pixelY = Math.round(centerY) + 'px';
-
-    backdrop.style.setProperty('--origin-x', percentX);
-    backdrop.style.setProperty('--origin-y', pixelY);
-  }
-
-  function openMenu(e) {
-    updateOrigin(e);
+  function openMenu() {
     backdrop.classList.add('is-open');
     trigger.classList.add('is-active');
     trigger.setAttribute('aria-expanded', 'true');
     backdrop.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
-
-    // Trigger shockwave re-run
-    if (shockwave) {
-      shockwave.style.animation = 'none';
-      void shockwave.offsetHeight; // trigger reflow
-      shockwave.style.animation = 'shockwaveExplode 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards';
-    }
   }
 
   function closeMenu() {
