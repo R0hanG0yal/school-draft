@@ -2923,16 +2923,64 @@ body {
     line-height: 1.45 !important;
   }
 
-  /* Exploded Menu Header on Mobile (Clean Spacing, No Overlap) */
+  /* Exploded Menu on Mobile (2 columns at a time to reduce scrolling) */
   .exploded-menu-container {
-    padding: 1.25rem 1.15rem;
-    margin: 0.75rem auto 2.5rem;
-    border-radius: 20px;
+    padding: 1.15rem 0.85rem;
+    margin: 0.5rem auto 2rem;
+    border-radius: 18px;
   }
 
   .exploded-grid {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0.75rem 0.55rem !important;
+  }
+
+  .exploded-col {
+    padding: 0.85rem 0.65rem !important;
+    border-radius: 14px !important;
+  }
+
+  .exploded-card-heading {
+    margin-bottom: 0.5rem !important;
+    padding-bottom: 0.45rem !important;
+    gap: 0.45rem !important;
+  }
+
+  .exploded-card-heading i {
+    font-size: 0.85rem !important;
+  }
+
+  .exploded-card-heading h3 {
+    font-size: 0.82rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .exploded-links {
+    gap: 0.25rem !important;
+  }
+
+  .exploded-link {
+    padding: 0.35rem 0.4rem !important;
+    font-size: 0.72rem !important;
+    border-radius: 6px !important;
+    line-height: 1.25 !important;
+    gap: 0.35rem !important;
+  }
+
+  .exploded-link i {
+    font-size: 0.6rem !important;
+    flex-shrink: 0;
+  }
+
+  .exploded-link span {
+    font-size: 0.72rem !important;
+    white-space: normal !important;
+    line-height: 1.2 !important;
+  }
+
+  .link-badge {
+    font-size: 0.58rem !important;
+    padding: 0.08rem 0.3rem !important;
   }
 
   .exploded-menu-header {
@@ -3611,7 +3659,71 @@ body {
 
 @media (max-width: 640px) {
   .exploded-quicklinks-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0.5rem !important;
+  }
+
+  .exploded-ql-item {
+    padding: 0.55rem 0.5rem !important;
+    gap: 0.45rem !important;
+    border-radius: 10px !important;
+  }
+
+  .ql-icon {
+    width: 28px !important;
+    height: 28px !important;
+    min-width: 28px !important;
+    border-radius: 6px !important;
+    font-size: 0.72rem !important;
+  }
+
+  .ql-details {
+    min-width: 0;
+  }
+
+  .ql-name {
+    font-size: 0.74rem !important;
+    line-height: 1.25 !important;
+    white-space: normal !important;
+    overflow: hidden !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+  }
+
+  .ql-sub {
+    font-size: 0.62rem !important;
+    line-height: 1.15 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .ql-arrow {
+    display: none !important;
+  }
+
+  .exploded-quicklinks-bar {
+    padding: 0.85rem !important;
+    margin-bottom: 1.25rem !important;
+  }
+
+  .exploded-quicklinks-title {
+    font-size: 0.82rem !important;
+  }
+
+  .exploded-quicklinks-badge {
+    font-size: 0.65rem !important;
+    padding: 0.15rem 0.45rem !important;
+  }
+
+  .exploded-footer-info {
+    gap: 0.45rem !important;
+  }
+
+  .exploded-contact-pill {
+    font-size: 0.72rem !important;
+    padding: 0.35rem 0.65rem !important;
   }
 }
 
